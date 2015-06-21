@@ -201,7 +201,7 @@ https://github.com/fortunejs/fortune/tree/master/website
         --><span class="return">Promise</span><!--
         --><!--
       --><a href="#adapter-find" class="anchor">#</a></h2><p>Find records by IDs and options. If IDs is undefined, it should try to return all records. However, if IDs is an empty array, it should be a no-op. The format of the options may be as follows:</p><pre><code class="lang-js">{
-  <span class="hljs-tag">query</span>: { ... },
+  <span class="hljs-tag">query</span>: <span class="hljs-tag">null</span>,
   <span class="hljs-tag">sort</span>: { ... },
   <span class="hljs-tag">fields</span>: { ... },
   <span class="hljs-tag">match</span>: { ... },
@@ -212,7 +212,7 @@ https://github.com/fortunejs/fortune/tree/master/website
   <span class="hljs-comment">// Offset results by this much from the beginning.</span>
   <span class="hljs-attribute">offset</span>: <span class="hljs-number">0</span>
 }
-</code></pre><p>The syntax of the <code>query</code> object depends on the specific adapter, and it allows for arbitrary querying which may be an expensive operation. The <code>match</code> object should be merged with <code>query</code> if it exists, though <code>query</code> should take precedence.</p><p>The syntax of the <code>sort</code> object is as follows:</p><pre><code class="lang-js">{
+</code></pre><p>The value of the <code>query</code> field depends on the specific adapter, and it allows for arbitrary querying which may be an expensive operation. The <code>match</code> object should be merged with <code>query</code> if it exists, though <code>query</code> should take precedence.</p><p>The syntax of the <code>sort</code> object is as follows:</p><pre><code class="lang-js">{
   <span class="hljs-attribute">age</span>: -<span class="hljs-number">1</span>, <span class="hljs-comment">// descending</span>
   <span class="hljs-attribute">name</span>: <span class="hljs-number">1</span> <span class="hljs-comment">// ascending</span>
 }
@@ -254,7 +254,7 @@ https://github.com/fortunejs/fortune/tree/master/website
 }</span>
 </code></pre><p>Things to consider:</p><ul><li><code>push</code> and <code>pull</code> can not be applied to non-arrays.</li><li>The same value in the same field should not exist in both <code>push</code> and <code>pull</code>.</li></ul><h2 id="adapter-delete">Adapter.<span class="key">delete</span><!--
         --><!--
-          -->(<span class="parameter" title="String">type</span>, <span class="parameter" title="Either an array of Strings, or an array of Numbers">[ids]</span>, <span class="parameter" title="Object">[options]</span>)<!--
+          -->(<span class="parameter" title="String">type</span>, <span class="parameter" title="Either an array of Strings, or an array of Numbers">[ids]</span>)<!--
         --><!--
         --><!--
         --><span class="arrow">⇒</span><!--
